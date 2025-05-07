@@ -3,7 +3,7 @@ This is our main driver file. It will be responsible for handling user input and
 """
 
 import pygame as p
-from Chess import ChessEngine
+import ChessEngine
 
 WIDTH = HEIGHT = 512
 DIMENSION = 8
