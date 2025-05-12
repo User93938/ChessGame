@@ -20,6 +20,9 @@ class GameState():
         self.moveLog = []
         self.whiteKingLocation = (7,4)
         self.blackKingLocation = (0,4)
+        #self.inCheck = False
+        self.pins = []
+        self.checks = []
         self.checkMate = False
         self.staleMate = False
 
@@ -34,6 +37,8 @@ class GameState():
         elif move.pieceMoved == 'bK':
             self.blackKingLocation = (move.endRow, move.endCol)
 
+    #undo the move
+
     def undoMove(self):
         if len(self.moveLog) != 0:
             move = self.moveLog.pop()
@@ -43,7 +48,7 @@ class GameState():
             if move.pieceMoved == 'wK':
                 self.whiteKingLocation = (move.startRow, move.startCol)
             elif move.pieceMoved == 'bK':
-                self.blackKingLocation = (move.endRow, move.endCol)
+                self.blackKingLocation = (move.startRow, move.startCol)
 
     def getValidMoves(self):
         #1.) Generate all possible moves
@@ -56,7 +61,7 @@ class GameState():
         #4.) for each of your opponent's moves, see if they attack your king
             self.whiteToMove = not self.whiteToMove
             if self.inCheck():
-                moves.remove(moves[i])#5.)if they do attack your king, not a vaild move
+                moves.remove(moves[i])
             self.whiteToMove = not self.whiteToMove
             self.undoMove()
         if len(moves) == 0:
@@ -67,7 +72,7 @@ class GameState():
         else:
             self.staleMate = False
             self.checkMate = False
-
+        #5.) if they do attack your king, not a valid move
         return moves
 
     def inCheck(self):
@@ -83,7 +88,6 @@ class GameState():
         self.whiteToMove = not self.whiteToMove
         for move in oppMoves:
             if move.endRow == r and move.endCol == c:
-                self.whiteToMove = not self.whiteToMove
                 return True
         return False
 
