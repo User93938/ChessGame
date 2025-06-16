@@ -20,7 +20,7 @@ class GameState():
         self.moveLog = []
         self.whiteKingLocation = (7,4)
         self.blackKingLocation = (0,4)
-        #self.inCheck = False
+        self.inCheck = False
         self.pins = []
         self.checks = []
         self.checkMate = False
@@ -64,6 +64,7 @@ class GameState():
                 moves.remove(moves[i])
             self.whiteToMove = not self.whiteToMove
             self.undoMove()
+#check for Check Mate or Stale Mate
         if len(moves) == 0:
             if self.inCheck():
                 self.checkMate = True
@@ -75,13 +76,14 @@ class GameState():
         #5.) if they do attack your king, not a valid move
         return moves
 
+# player is in Check
     def inCheck(self):
         if self.whiteToMove:
             return self.squareUnderAttack(self.whiteKingLocation[0], self.whiteKingLocation[1])
         else:
             return self.squareUnderAttack(self.blackKingLocation[0], self.blackKingLocation[1])
 
-
+# To determine if the enemy can atttack the square (row , col)
     def squareUnderAttack(self, r, c):
         self.whiteToMove = not self.whiteToMove
         oppMoves = self.getAllPossibleMoves()
@@ -90,7 +92,7 @@ class GameState():
             if move.endRow == r and move.endCol == c:
                 return True
         return False
-
+# generate all moves without considering checks
     def getAllPossibleMoves(self):
         moves = [ ]
         for r in range(len(self.board)):
