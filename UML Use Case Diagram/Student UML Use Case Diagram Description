@@ -1,0 +1,78 @@
+# 📄 **Student Module – Use Case Analysis**
+
+*(ChessSense Platform – Functional Specification)*
+
+---
+
+## 🔸 **Overview**
+
+The Student Module is the heart of the *ChessSense* platform, designed to help learners progress in their chess journey. It provides tools for personalized learning, real-time gameplay, interactive communication with coaches, and performance tracking. The module ensures a gamified, structured, and AI-powered learning experience.
+
+---
+
+## 🔸 **Primary Actor**
+
+**Student** – A user enrolled in the ChessSense platform to improve their chess skills through lessons, puzzles, games, and coaching.
+
+---
+
+## 🔸 **Goals of the Student Module**
+
+* Learn chess through guided lessons and interactive puzzles.
+* Compete in real-time games with various opponents.
+* Track personal progress and receive feedback.
+* Communicate with coaches and peers.
+* Customize the learning experience for better engagement.
+
+---
+
+## 🔸 **Use Case Summary Table**
+
+| **Use Case**                      | **Description**                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------- |
+| **Register account**              | New users create a student profile to join the platform.                         |
+| **Create account**                | Guided process to input credentials and student details.                         |
+| **Login**                         | Access the platform using email and password.                                    |
+| **View/update profile**           | Manage personal information and settings.                                        |
+| **Join institution with code**    | Connect with a specific school or coach using an institution code.               |
+| **Access lessons**                | Engage with AI-curated and coach-assigned training material.                     |
+| **Solve puzzles**                 | Solve tactical and strategic problems at increasing difficulty.                  |
+| **Track progress & achievements** | View performance charts, achievements, and lesson completion status.             |
+| **Play vs AI**                    | Practice games against computer opponents of varying difficulty.                 |
+| **Play vs friend**                | Invite and play games with friends within the platform.                          |
+| **Play vs random opponent**       | Get matched with a random player online for live gameplay.                       |
+| **View game history**             | Access previous games, including results and moves.                              |
+| **Get AI analysis**               | Analyze gameplay with AI feedback on blunders, accuracy, and best moves.         |
+| **Chat with coach**               | Direct messaging with the assigned coach for support and feedback.               |
+| **Receive notifications**         | Alerts for new lessons, messages, assignments, and game results.                 |
+| **Participate in tournaments**    | Join official or friendly competitions conducted by the platform or institution. |
+| **Customize UI and settings**     | Personalize the platform appearance and game preferences.                        |
+
+---
+
+## 🔸 **Flow Summary (from Diagram)**
+
+* Students begin from **Start**, register or log in using the appropriate path (new or existing users).
+* After successful login, they gain access to learning, gameplay, and communication modules.
+* The flow completes at **End**, representing session completion or exit.
+
+---
+
+## 🔸 **Modularity & Integration**
+
+The Student Module is **deeply integrated** with:
+
+* **Coach Module** (lesson assignment, chat, progress review)
+* **Training Engine** (AI puzzles, analysis)
+* **Notification System** (activity tracking, lesson alerts)
+* **Institution/Admin Module** (assignment to groups or classes)
+
+The design is modular, supporting feature extension like multiplayer tournaments, rating systems, or real-time alerts without affecting core functionality.
+
+---
+
+## ✅ **Conclusion**
+
+The Student Module ensures that learners experience chess not only as a game but as a guided journey. With rich features like AI-driven analysis, puzzle solving, and real-time communication, it forms the educational backbone of the ChessSense platform.
+
+---
